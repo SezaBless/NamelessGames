@@ -1,0 +1,130 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+
+
+<!-- Esta parte se trata de la pgina principal donde sale nuestro avatar entre otros -->
+{% block content %}
+<!DOCTYPE html>
+<body style="background-color:rgba(3, 61, 109, 0.856);">
+
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.8">
+        <title>Nameless Games!</title>
+    </head>
+    <div class="container-fluid" id="background-head">
+                <div class = "rows">
+                 <header class="py-5 bg-image-full" style="background-image: url('https://www.enwallpaper.com/wp-content/uploads/2021/02/29-294447-download-undertale-wallpaper-desktop-undertale-waterfall-art.png')">
+                    <div class="text-center my-5">
+                        <img src="{% static 'images/title3.png' %}" alt="...">
+                    </div>
+                </header>
+            </div>
+        </div>
+
+        <section>
+            <div class="sectionSpaceSm background-color">
+              <div class="container">
+                <div class="row pb-3">
+                  <div class="col">
+                    
+                    <h4 class="smText regular text-white">Juegos más Populares!</h4>
+                  </div>
+                  <div class="col-auto">
+                    <a href="{% url 'main:blogs' %}" class="simpleLink text-white">Más</a>
+                  </div>
+                </div>
+                <div class="row g-3">
+                {% for b in blogs %}
+                {% if b.is_active %}
+                  <div class="col-lg-6">
+                    <div class="cardStyle1 ">
+                      <h4 class="mdTitle cs1Title"><a href="{% url 'main:blog' slug=b.slug %}">{{b.name}}</a></h4>
+                      <ul class="cardOptionCol">
+                        <li>{{b.timestamp.date}}</li>
+                        <li>{{b.author}}</li>
+                      </ul>
+                      <p>{{b.description}}</p>
+                    </div>
+                  </div>
+                  
+               
+                  
+                          {% endif %}
+                          {% endfor %}
+                </section>            
+<section>
+  <div class="sectionSpace">
+    <div class="container " style="background-color:rgba(197, 219, 238, 0.856); ">
+      <div class="portfolioCol">
+        <div class="row pb-3">
+          <div class="col">
+            <h4 class="smText regular text-white">ROMs Disponibles</h4>
+          </div>
+          <div class="col-auto">
+            <a href="{% url 'main:portfolios' %}" class="simpleLink text-white">Más</a>
+          </div>
+        </div>
+        {% for p in portfolio %}
+        {% if p.is_active %}
+        <div class="portfolioCard">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-auto">
+              <div class="portfolioImgCol">
+                <a href="{% url 'main:portfolio' slug=p.slug %}"><img src="{{p.image.url}}" alt="..."></a>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="portfolioContentCol">
+                <h4 class="lgTitle"><a href="{% url 'main:portfolio' slug=p.slug %}">{{p.name}}</a></h4>
+                <ul class="portfolioOption">
+                  <li><span class="dateLbl">{{p.date.year}}</span></li>
+                </ul>
+                <p>{{p.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+         
+          {% endif %}
+          {% endfor %}
+        </section>
+          
+                    
+        
+</body>
+</html>
+{%endblock%} 

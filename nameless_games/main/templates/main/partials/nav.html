@@ -1,0 +1,43 @@
+{% load static %}
+<!-- ================================
+Start Navigation Bar
+================================= -->
+<!--Barra de navegacion -->
+
+<header>
+    <div class="headerCol p-3 mb-2 bg-dark text-white">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+        <div class="col-auto">
+         <div class="logoCol"><a href="{% url 'main:home' %}"><img src="{% static 'images/WOFF.png' %}" alt="..."></a><a class="navbar-brand" href="#!">Namesless Games!</a> </div>
+         </div>
+        <div class="col">
+            <div class="d-md-none">
+            <button class="navToggle">
+                <span class="navToggle__text">Toggle Menu</span>
+            </button>
+            </div>
+
+            <div class="navCollapseCol">
+            <div class="navCol">
+                <ul>
+                    
+                <li><a href="{%url 'main:home'%}" class="text-white ">Inicio</a></li>
+                <li><a href="{% url 'main:login' %}" class="text-white ">Sesión</a></li>
+                <li><a href="{% url 'main:blogs' %}" class="text-white">Juegos</a></li>
+                <li><a href="{% url 'main:portfolios' %}" class="text-white">ROMs</a></li>
+                <li><a href="{% url 'main:profiles' %}" class="text-white">Workers</a></li>
+                <li><a href="{% url 'main:contact' %}" class="text-white">Ayuda</a></li>
+                
+                 
+                </ul>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</header>
+<!-- ================================
+End Navigation Bar
+================================= -->

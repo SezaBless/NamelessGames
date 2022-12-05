@@ -1,0 +1,170 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<!-- Section donde se muestran los perfiles de creadores de la pagina (puro adorno la verdad pero es bonito :D) -->
+
+<section>
+    <body style="background-color:rgba(3, 61, 109, 0.856);">
+
+    
+    <div class="bannerSection">
+      <div class="container" style="background-color:rgba(197, 219, 238, 0.856); ">
+        <div class="row g-4 g-md-3  align-items-center">
+          <div class="col-md-auto order-md-last">
+            <div class="bannerUserImg">
+              <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="bannerContent">
+              <h1 class="xlTitle pb-3">Hi, Soy Nameless Worker 99999 :)</p>
+              <div class="bannerBtnCol">
+                <div class="row">
+                  <div class="col-auto">
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="sectionSpace pt-0">
+      <div class="container"style="background-color:rgba(197, 219, 238, 0.856); ">
+        <div class="row">
+          <div class="col-md-auto">
+            <div class="keySkillCol">
+              <h4 class="smTitle pb-3">Key Skills</h4>
+              {% for sk in me.userprofile.skills.all %}
+              {% if sk.is_key_skill %}
+              <div class="keySkillCard">
+                {% if sk.image %}
+                <div class="ksIconCol">
+                  <img src="{{sk.image.url}}" alt="...">
+                </div>
+                {% endif %}
+                <span class="ksText">{{sk.name}}</span>
+              </div></div>
+              {% endif %}
+              {% endfor %}
+
+              <div class="bannerSection">
+                <div class="container" style="background-color:rgba(197, 219, 238, 0.856); ">
+                  <div class="row g-4 g-md-3  align-items-center">
+                    <div class="col-md-auto order-md-last">
+                      <div class="bannerUserImg">
+                        <img src="{% static 'images/worker1.jpg' %}">
+                      </div>
+                    </div>
+                    <div class="col-md">
+                      <div class="bannerContent">
+                        <h1 class="xlTitle pb-3">Hi, Soy Nameless Worker1! :D</p>
+                        <div class="bannerBtnCol">
+                          <div class="row">
+                            <div class="col-auto">
+                         
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="sectionSpace pt-0">
+                <div class="container"style="background-color:rgba(197, 219, 238, 0.856); ">
+                  <div class="row">
+                    <div class="col-md-auto">
+                      <div class="keySkillCol">
+                        <h4 class="smTitle pb-3">Key Skills</h4>
+                        {% for sk in me.userprofile.skills.all %}
+                        {% if sk.is_key_skill %}
+                        <div class="keySkillCard">
+                          {% if sk.image %}
+                          <div class="ksIconCol">
+                            <img src="{{sk.image.url}}" alt="...">
+                          </div>
+                          {% endif %}
+                          <span class="ksText">{{sk.name}}</span>
+                        </div></div>
+                        {% endif %}
+                        {% endfor %}
+
+                        <div class="bannerSection">
+                          <div class="container" style="background-color:rgba(197, 219, 238, 0.856); ">
+                            <div class="row g-4 g-md-3  align-items-center">
+                              <div class="col-md-auto order-md-last">
+                                <div class="bannerUserImg">
+                                  <img src="{% static 'images/hoii.jpg' %}">
+                                </div>
+                              </div>
+                              <div class="col-md">
+                                <div class="bannerContent">
+                                  <h1 class="xlTitle pb-3">HOII11II!! >:D</p>
+                                  <div class="bannerBtnCol">
+                                    <div class="row">
+                                      <div class="col-auto">
+                                   
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="sectionSpace pt-0">
+                          <div class="container"style="background-color:rgba(197, 219, 238, 0.856); ">
+                            <div class="row">
+                              <div class="col-md-auto">
+                                <div class="keySkillCol">
+                                  <h4 class="smTitle pb-3">Key Skills</h4>
+                                  {% for sk in me.userprofile.skills.all %}
+                                  {% if sk.is_key_skill %}
+                                  <div class="keySkillCard">
+                                    {% if sk.image %}
+                                    <div class="ksIconCol">
+                                      <img src="{{sk.image.url}}" alt="...">
+                                    </div>
+                                    {% endif %}
+                                    <span class="ksText">{{sk.name}}</span>
+                                  </div></div>
+                                  {% endif %}
+                                  {% endfor %}
+        {% endblock %}

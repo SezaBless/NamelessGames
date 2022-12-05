@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<!-- Section donde se muestran los portfolio con su descripcion etc-->
+<section>
+  <body style="background-color:rgba(3, 61, 109, 0.856);">
+  <div class="innerPageBannerCol">
+    <div class="container" style="background-color:rgba(197, 219, 238, 0.856); ">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-6">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-md-3">{{object.name}}</h1>
+          </div>
+       
+  </div>
+
+  <div class="sectionSpaceSm">
+    <div class="container">
+      {{object.body|safe}}
+    </div>
+    <div class="col-auto">
+      <a download href="{{me.userprofile.cv.url}}" class="btn btnPrimary">Download Game!!1</a>
+    </div> 
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
